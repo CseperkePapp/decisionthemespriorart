@@ -1,0 +1,73 @@
+# DT-composer-flow.txt
+### ASCII Diagram — Composer Workflow (v0.1)
+
+```
+                 ┌─────────────────────────────┐
+                 │  Design Decision Composer   │
+                 │-----------------------------│
+                 │  vt: VT-<id>                │
+                 │  dictionary: DTD-<id>       │
+                 │  decisions:                 │
+                 │    - platforms              │
+                 │    - voices                 │
+                 │    - modes                  │
+                 │    - accessibility          │
+                 │    - outputs                │
+                 │  dts[]: selected modules    │
+                 └───────────────▲─────────────┘
+                                 │
+                                 │ builds config
+                                 │
+                 ┌───────────────┴─────────────┐
+                 │      Dependency Graph       │
+                 │-----------------------------│
+                 │  - parse connectors         │
+                 │  - match requires/provides  │
+                 │  - detect missing deps      │
+                 │  - validate footprints      │
+                 │  - detect cycles            │
+                 └───────────────▲─────────────┘
+                                 │
+                                 │ topological order
+                                 │
+               ┌─────────────────┴──────────────────┐
+               │         DT Cascade Engine          │
+               │------------------------------------│
+               │  Apply in resolved order:          │
+               │   1. VT                            │
+               │   2. Dictionary semantics          │
+               │   3. DT logic modules              │
+               │   4. overlays (device/mode/a11y)   │
+               └─────────────────▲──────────────────┘
+                                 │
+                                 │ produces
+                                 │
+                  ┌──────────────┴──────────────┐
+                  │         EffectiveDT         │
+                  │-----------------------------│
+                  │ - full resolved theme       │
+                  │ - device variants           │
+                  │ - mode variants             │
+                  │ - a11y variants             │
+                  └──────────────┬──────────────┘
+                                 │
+                                 │ to exporters
+                                 │
+              ┌──────────────────┴──────────────────┐
+              │       Export Targets (examples)     │
+              │-------------------------------------│
+              │  - CSS                              │
+              │  - JSON design tokens               │
+              │  - EPUB stylesheets                 │
+              │  - PDF templates                    │
+              │  - mobile themes                    │
+              └─────────────────────────────────────┘
+```
+
+**Notes:**
+- The Composer makes *declarative decisions* only.
+- All logic lives in DT modules.
+- Ordering is derived through connector dependency resolution.
+- The cascade engine produces the deterministic final theme.
+- Export targets are external to the Composer but driven by its `decisions.outputs`.
+

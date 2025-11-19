@@ -1,0 +1,25 @@
+{
+  "id": "DT-main-voice",
+  "version": "0.1",
+  "requires": [
+    {
+      "id": "typography.spine",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["body", "h1", "h2"]
+      }
+    }
+  ],
+  "provides": [
+    {
+      "id": "typography.main",
+      "domain": "typography",
+      "direction": "provides",
+      "footprint": {
+        "roles": ["main.body", "main.h1", "main.h2"]
+      }
+    }
+  ],
+  "logic": {}
+}

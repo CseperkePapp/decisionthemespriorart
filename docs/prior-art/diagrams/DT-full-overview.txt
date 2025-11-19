@@ -1,0 +1,80 @@
+# DT-full-overview.txt
+
+### ASCII Diagram — End-to-End System Overview (v0.1)
+
+```
+      ┌──────────────────────────────────────────────────────────┐
+      │                DESIGN SYSTEM LAYERS                      │
+      └──────────────────────────────────────────────────────────┘
+
+      VT  →  Dictionary  →  DT Lattice  →  Composer  →  EffectiveDT  →  Exports
+      │        │                │              │             │             │
+      │        │                │              │             │             └─► CSS / Tokens / PDF / EPUB / App
+      │        │                │              │             │
+      │        │                │              │             └─► used by exporters
+      │        │                │              │
+      │        │                │              └─► declarative decisions
+      │        │                │
+      │        │                └─► modular logic (DTs with connectors)
+      │        └─► semantic roles & footprint
+      └─► raw values (fonts, colors, spacing)
+
+
+      ┌──────────────────────────────────────────────────────────┐
+      │                    THREE MACHINES                        │
+      └──────────────────────────────────────────────────────────┘
+
+      Raw Content + Brief
+                 │
+                 ▼
+      ┌─────────────────────────────┐
+      │  Machine A — Modeler        │
+      │-----------------------------│
+      │  - analyzes content         │
+      │  - proposes Dictionary      │
+      │  - seeds VT                 │
+      │  - drafts Composer          │
+      └───────────────▲─────────────┘
+                      │ VT + DTD + Composer
+                      │
+                      ▼
+      ┌─────────────────────────────┐
+      │  Machine B — DTS Editor     │
+      │-----------------------------│
+      │  - refine VT & Dictionary   │
+      │  - edit/select DT modules   │
+      │  - validate lattice         │
+      │  - resolve to EffectiveDT   │
+      └───────────────▲─────────────┘
+                      │ EffectiveDT
+                      │
+                      ▼
+      ┌──────────────────────────────┐
+      │  Machine C — Renderer        │
+      │------------------------------│
+      │  - map content roles         │
+      │  - apply platform/mode/a11y  │
+      │  - render final outputs      │
+      └──────────────────────────────┘
+
+
+      ┌──────────────────────────────────────────────────────────┐
+      │                    KEY RELATIONSHIPS                     │
+      └──────────────────────────────────────────────────────────┘
+
+      - VT feeds Dictionary with raw values.
+      - Dictionary defines semantic primitives.
+      - DTs attach to Dictionary and each other via typed connectors.
+      - Composer chooses which DTs participate, and in what context.
+      - The cascade engine resolves everything into EffectiveDT.
+      - Renderers use EffectiveDT + structured content to produce artifacts.
+
+```
+
+**Summary:**
+This diagram shows the **two main axes** of Decision Themes:
+
+* the **design-system axis** (VT → Dictionary → DTs → Composer → EffectiveDT → Exports)
+* the **processing axis** (Modeler → DTS Editor → Renderer)
+
+Together they describe the full end-to-end flow from content and values to rendered, multi-platform design outcomes.

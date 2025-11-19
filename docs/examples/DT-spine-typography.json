@@ -1,0 +1,26 @@
+{
+  "id": "DT-spine-typography",
+  "version": "0.1",
+  "requires": [
+    {
+      "id": "typography.book",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["body", "h1", "h2"]
+      }
+    }
+  ],
+  "provides": [
+    {
+      "id": "typography.spine",
+      "domain": "typography",
+      "direction": "provides",
+      "footprint": {
+        "roles": ["body", "h1", "h2"],
+        "properties": ["size", "lineHeight", "weight"]
+      }
+    }
+  ],
+  "logic": {}
+}

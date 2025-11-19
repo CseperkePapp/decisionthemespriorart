@@ -1,0 +1,19 @@
+{
+  "id": "DT-dictionary-book-mvp",
+  "version": "0.1",
+  "requires": [
+    { "id": "typography.base", "roles": ["base"] },
+    { "id": "spacing.base", "roles": ["baseline"] },
+    { "id": "color.anchors", "roles": ["paper", "ink", "accent"] }
+  ],
+  "provides": [
+    { "id": "typography.book", "roles": ["body", "h1", "h2"] },
+    { "id": "surface.basic", "roles": ["surface.main"] }
+  ],
+  "roles": {
+    "body": {},
+    "h1": {},
+    "h2": {},
+    "surface.main": {}
+  }
+}

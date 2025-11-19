@@ -1,0 +1,25 @@
+# DT-dictionary-layer.txt
+### ASCII Diagram — Dictionary as the First Semantic Layer (v0.1)
+
+```
+     ┌────────────────────────────┐
+     │ Value Theme (VT)           │
+     │ - raw values               │
+     └───────────▲────────────────┘
+                 │ requires
+                 │
+     ┌───────────┴────────────────┐
+     │ Decision Themes Dictionary │
+     │ - semantic primitives      │
+     │ - role definitions         │
+     │ - surface categories       │
+     │ - color semantics          │
+     └───────────▲────────────────┘
+                 │ provides
+                 │
+     ┌───────────┴────────────────┐
+     │   Decision Themes (DTs)    │
+     │   attach to dictionary     │
+     └────────────────────────────┘
+```
+

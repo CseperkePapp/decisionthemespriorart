@@ -1,0 +1,33 @@
+{
+  "id": "DT-shared-meta-elements",
+  "version": "0.1",
+  "requires": [
+    {
+      "id": "typography.main",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["main.body", "main.h1"]
+      }
+    },
+    {
+      "id": "typography.expl",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["expl.body", "expl.h1"]
+      }
+    }
+  ],
+  "provides": [
+    {
+      "id": "typography.shared.meta",
+      "domain": "typography",
+      "direction": "provides",
+      "footprint": {
+        "roles": ["caption", "hint", "chip"]
+      }
+    }
+  ],
+  "logic": {}
+}

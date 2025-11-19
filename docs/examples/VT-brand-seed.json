@@ -1,0 +1,28 @@
+{
+  "id": "VT-brand-seed",
+  "version": "0.1",
+  "fonts": {
+    "primary": "Cormorant",
+    "secondary": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "sizes": {
+    "base": 16,
+    "scaleRatio": 1.25,
+    "lineHeightBase": 1.4
+  },
+  "colors": {
+    "paper": "#ffffff",
+    "ink": "#111111",
+    "accent": "#6a4df5"
+  },
+  "spacing": {
+    "baseline": 4
+  },
+  "breakpoints": {
+    "mobile": 480,
+    "tablet": 768,
+    "laptop": 1024,
+    "desktop": 1440
+  }
+}

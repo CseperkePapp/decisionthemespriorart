@@ -1,0 +1,44 @@
+# DT-lattice-example-multi-layer.txt
+### ASCII Diagram — Example Multi-Layer DT Lattice (v0.1)
+
+> This is **one possible lattice configuration** built on a single VT. It is illustrative only; Decision Themes allows arbitrary lattices as long as connectors validate.
+
+```
+                   DT-accessibility-AA       DT-accessibility-AAA       DT-accessibility-alt
+                              ▲                      ▲                          ▲
+                              \_________________  ___/__________________________/
+                                                ▲
+                                                │
+                                      DT-common-accessibility
+                                                ▲
+                                                │
+             DT-device-mobile   DT-device-tablet   DT-device-laptop   DT-device-desktop
+                      ▲               ▲                  ▲                    ▲
+                      \_______________|__________________|___________________/
+                                      ▲
+                                      │
+                             DT-common-device-decisions
+                                      ▲
+                                      │
+           DT-style-main       DT-style-explanation      DT-style-freeform      DT-style-email-signature
+                    ▲                    ▲                        ▲                         ▲
+                    \____________________|________________________|________________________/
+                                        ▲
+                                        │
+                              DT-basic-relationships
+                                        ▲
+                                        │
+                                       VT
+                             (e.g. 3 colors, 3 fonts, base size)
+```
+
+**Notes:**
+- VT holds raw design values (e.g. 3 colors, 3 fonts, base size).
+- `DT-basic-relationships` establishes core typographic and spacing logic.
+- Style DTs (main, explanation, freeform, email signature) fork from the same base.
+- `DT-common-device-decisions` joins those styles and prepares them for device overlays.
+- Device DTs (mobile/tablet/laptop/desktop) overlay contextual rules.
+- `DT-common-accessibility` then feeds multiple accessibility overlays (AA, AAA, alt).
+
+This diagram is **only one example lattice**. In practice, users can define different DT types, branching patterns, and join structures, as long as the connector contracts are satisfied.
+

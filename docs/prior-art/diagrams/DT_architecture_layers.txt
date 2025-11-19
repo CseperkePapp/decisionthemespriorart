@@ -1,0 +1,39 @@
+# DT-architecture-layers.txt
+### ASCII Diagram — Five-Layer Architecture (v0.1)
+
+```
+┌──────────────────────────────┐
+│  Layer 5: Effective Theme     │
+│  (ET - resolved, exportable)  │
+└───────────────▲──────────────┘
+                │
+┌───────────────┴──────────────┐
+│  Layer 4: Design Decision     │
+│            Composer (DDC)     │
+│  - selects DTs                │
+│  - declares platforms/modes   │
+│  - validates connectors       │
+└───────────────▲──────────────┘
+                │
+┌───────────────┴──────────────┐
+│  Layer 3: Decision Themes     │
+│            (DT Lattice)       │
+│  - modular logic blocks       │
+│  - fork/join relationships    │
+│  - overlays (device, a11y)    │
+└───────────────▲──────────────┘
+                │
+┌───────────────┴──────────────┐
+│  Layer 2: Dictionary (DTD)    │
+│  - semantic footprint         │
+│  - roles, surfaces, voices    │
+│  - first semantic layer       │
+└───────────────▲──────────────┘
+                │
+┌───────────────┴──────────────┐
+│  Layer 1: Value Theme (VT)    │
+│  - raw values only            │
+│  - typefaces, colors, spacing │
+└──────────────────────────────┘
+```
+

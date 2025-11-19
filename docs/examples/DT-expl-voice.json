@@ -1,0 +1,25 @@
+{
+  "id": "DT-expl-voice",
+  "version": "0.1",
+  "requires": [
+    {
+      "id": "typography.spine",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["body", "h1", "h2"]
+      }
+    }
+  ],
+  "provides": [
+    {
+      "id": "typography.expl",
+      "domain": "typography",
+      "direction": "provides",
+      "footprint": {
+        "roles": ["expl.body", "expl.h1", "expl.h2"]
+      }
+    }
+  ],
+  "logic": {}
+}

@@ -1,0 +1,39 @@
+# DT-connector-system.txt
+
+### ASCII Diagram — Connector Footprint & Matching (v0.1)
+
+```
+          Provider Connector (from Dictionary or DT)
+
+          ┌───────────────────────────────────┐
+          │  id: typography.spine             │
+          │  domain: typography               │
+          │  direction: provides              │
+          │  footprint:                       │
+          │    roles: [body, h1, h2]          │
+          │    properties: [size, lineHeight] │
+          └───────────────▲───────────────────┘
+                          │
+                          │  subset match
+                          │  (roles/properties)
+                          │
+          ┌───────────────┴───────────────────┐
+          │  Consumer Connector (DT requires) │
+          │  id: typography.main              │
+          │  domain: typography               │
+          │  direction: requires              │
+          │  footprint:                       │
+          │    roles: [body, h1]              │
+          │    properties: [size]             │
+          └───────────────────────────────────┘
+
+                VALID: consumer.roles ⊆ provider.roles
+                       consumer.properties ⊆ provider.properties
+                       consumer.domain == provider.domain
+```
+
+**Notes:**
+
+* Connectors describe the **shape** of what a module offers or needs.
+* The subset rule works like Lego studs: a smaller footprint can attach to a larger compatible one.
+* This mechanism is used by the Composer to validate DT assemblies and order the lattice.

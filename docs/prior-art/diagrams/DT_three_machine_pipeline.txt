@@ -1,0 +1,40 @@
+# DT-three-machine-pipeline.txt
+### ASCII Diagram — The Three-Machine Pipeline (v0.1)
+
+```
+                   ┌─────────────────────────────┐
+                   │   Machine A — Modeler       │
+                   │-----------------------------│
+                   │ - analyzes content          │
+                   │ - identifies semantics      │
+                   │ - proposes Dictionary       │
+                   │ - seeds VT                  │
+Content ─────────► │ - drafts Composer           │
+                   └───────────────▲─────────────┘
+                                   │ outputs
+                                   │
+                   ┌───────────────┴─────────────┐
+                   │   Machine B — DTS Editor    │
+                   │-----------------------------│
+VT+DTD+Composer►   │ - refine VT                 │
+                   │ - refine Dictionary (opt.)  │
+                   │ - edit/select DTs           │
+                   │ - validate lattice          │
+                   │ - generate EffectiveDT      │
+                   └───────────────▲─────────────┘
+                                   │ outputs
+                                   │
+                   ┌───────────────┴─────────────┐
+                   │   Machine C — Renderer      │
+                   │-----------------------------│
+EffectiveDT +      │ - map content roles         │
+tagged content ──► │ - apply platforms/modes     │
+                   │ - produce HTML/PDF/EPUB/etc │
+                   └─────────────────────────────┘
+```
+
+**Summary:**
+- **Machine A** turns raw content + brief into semantic structures (Dictionary + VT seeds + Composer draft).
+- **Machine B** (Decision Themes Studio) resolves design logic into a validated Effective Theme.
+- **Machine C** renders final artifacts by applying the ET to structured content.
+

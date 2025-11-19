@@ -1,0 +1,25 @@
+{
+  "id": "DT-device-laptop",
+  "version": "0.1",
+  "requires": [
+    {
+      "id": "typography.shared.meta",
+      "domain": "typography",
+      "direction": "requires",
+      "footprint": {
+        "roles": ["caption", "hint", "chip"]
+      }
+    }
+  ],
+  "provides": [
+    {
+      "id": "typography.laptop",
+      "domain": "typography",
+      "direction": "provides",
+      "footprint": {
+        "roles": ["main.body", "expl.body", "caption"]
+      }
+    }
+  ],
+  "logic": {}
+}

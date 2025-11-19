@@ -1,0 +1,21 @@
+{
+  "id": "DT-composer-book-mvp",
+  "version": "0.1",
+  "vt": "VT-brand-seed",
+  "dictionary": "DT-dictionary-book-mvp",
+  "decisions": {
+    "platforms": ["mobile", "laptop"],
+    "voices": ["main", "expl"],
+    "modes": ["light"],
+    "accessibility": ["wcag-aa"],
+    "outputs": ["web", "tokens-json"]
+  },
+  "dts": [
+    { "id": "DT-spine-typography", "source": "DT-spine-typography.json" },
+    { "id": "DT-main-voice", "source": "DT-main-voice.json" },
+    { "id": "DT-expl-voice", "source": "DT-expl-voice.json" },
+    { "id": "DT-shared-meta-elements", "source": "DT-shared-meta.json" },
+    { "id": "DT-device-mobile", "source": "DT-device-mobile.json" },
+    { "id": "DT-device-laptop", "source": "DT-device-laptop.json" }
+  ]
+}

@@ -89,5 +89,3 @@ All files released under **MIT License**.
 This release constitutes **timestamped public disclosure** of the Decision Themes architecture.
 
 ---
-
-If preparing a Zenodo archive or generating a DOI, use this release as the basis.
